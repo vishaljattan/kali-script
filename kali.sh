@@ -61,6 +61,26 @@ select choice in "${choices[@]}"; do
             break
             ;;
   esac
+  done
+echo -e "\nWant to install Chromium Web Browser?"
+PS3="Please select an option : "
+choices=("yes" "no")
+select choice in "${choices[@]}"; do
+        case $choice in
+          yes)
+
+            echo -e "\nInstalling Chromium"
+            sudo apt-get install chromium-browser
+            sudo apt-get --fix-broken install
+            sleep 1
+            break
+            ;;
+          no)
+            echo -e "Nise."
+            sleep 1
+            break
+            ;;
+  esac
 done
 echo -e "\nWant to install AnyDesk?"
 PS3="Please select an option : "
